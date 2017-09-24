@@ -28,8 +28,17 @@ const initState = {
                 { val: 'z', keyVal: 26 },
                 { val: ' ', keyVal: 27 }],
     specials: [{ val: 'backspace', keyVal: 28 }],
-    autos: [{ val: 'hey', keyVal: 29},
-            { val: 'what\'s up', keyVal: 30 }],
+    autos: [
+        { val: 'hey', keyVal: 29},
+        { val: 'what\'s up', keyVal: 30 },
+        { val: 'want to hang out', keyVal: 31 },
+        { val: 'they', keyVal: 32 },
+        { val: 'she', keyVal: 33 },
+        { val: 'he', keyVal: 34 },
+        { val: 'you', keyVal: 35 },
+        { val: 'your', keyVal: 36 },
+        { val: 'you\'re', keyVal: 37 },
+    ],
     currentMessage: '',
 };
 
@@ -49,6 +58,7 @@ export const getAutos = (message) => {
             autoMatches.push(auto);
         }
     }
+    autoMatches.length = 5;
     return autoMatches;
 };
 export const backspace = (value) => ({ type: LETTER_REMOVE, payload: value });

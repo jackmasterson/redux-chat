@@ -12,19 +12,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React with Redux</h2>
+        <div className="message">
+          <Message />
         </div>
-        <Message />
         <Alphabet />
         <Router>
           <div className="Todo-app">
-            <TodoForm />
             <Route path='/:filter?' render={({match}) => (
               <TodoList filter={match.params.filter} />
             )} />
-            <Footer />
           </div>
         </Router>
       </div>

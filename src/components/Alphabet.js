@@ -52,7 +52,7 @@ class Alphabet extends Component {
                         key={special.keyVal} {...special}/>
                 )}
             </div>
-            <div>
+            <div className="autofills">
                 {this.props.autos.map(auto => 
                     <Autos
                         initiateAutofill={this.props.initiateAutofill}
