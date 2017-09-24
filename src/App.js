@@ -15,12 +15,12 @@ class App extends Component {
         <div className="message">
           <Message />
         </div>
-        <Alphabet />
         <Router>
           <div className="Todo-app">
             <Route path='/:filter?' render={({match}) => (
-              <TodoList filter={match.params.filter} />
+              <Alphabet filter={match.params.filter} />
             )} />
+            <Footer />
           </div>
         </Router>
       </div>
