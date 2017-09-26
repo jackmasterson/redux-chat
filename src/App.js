@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import TodoForm from './components/TodoForm';
@@ -7,6 +7,8 @@ import TodoList from './components/TodoList';
 import Message from './components/Message';
 import Footer from './components/Footer';
 import Alphabet from './components/Alphabet';
+import Contacts from './components/Contacts';
+import CreateContactForm from './components/CreateContact';
 
 class App extends Component {
   render() {
@@ -16,13 +18,16 @@ class App extends Component {
           <Message />
         </div>
         <Router>
-          <div className="Todo-app">
-            <Route path='/:filter?' render={({match}) => (
-              <Alphabet filter={match.params.filter} />
-            )} />
+          <div>
+            <Switch>
+              <Route exact path='/' component={Alphabet} />
+              <Route path='/contacts' component={Contacts} />
+              <Route path='/create-contact' component={CreateContactForm} />
+            </Switch>
             <Footer />
           </div>
         </Router>
+
       </div>
     );
   }
