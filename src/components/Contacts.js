@@ -17,7 +17,7 @@ class Contacts extends Component {
         return (
             <ul>
                 {this.props.contacts.map(contact =>
-                    <Contact key={contact.number} {...contact} />
+                    <Contact key={contact.number.number} {...contact} />
                 )}
             </ul>
         )
