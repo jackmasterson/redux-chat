@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import { fetchContacts } from '../reducers/contacts.js';
+import { fetchContacts, selectContact } from '../reducers/contacts.js';
 
-const Contact = ({number, named}) => (
-    <li className="inline">
+const Contact = ({number, named, selectContact}) => (
+    <li className="inline"
+        onClick={() => selectContact(number)}>
         {number.named}
     </li>
 );
@@ -17,7 +18,9 @@ class Contacts extends Component {
         return (
             <ul>
                 {this.props.contacts.map(contact =>
-                    <Contact key={contact.number.number} {...contact} />
+                    <Contact
+                        selectContact={this.props.selectContact} 
+                        key={contact.number.number} {...contact} />
                 )}
             </ul>
         )
@@ -25,6 +28,6 @@ class Contacts extends Component {
 }
 
 export default connect(
-    (state) => ({ contacts: state.contact.contacts}),
-    {fetchContacts}
+    (state) => ({ contacts: state.contact.contacts, selected: state}),
+    {fetchContacts, selectContact}
 )(Contacts);

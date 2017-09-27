@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import Alphabet from './components/Alphabet';
 import Contacts from './components/Contacts';
 import CreateContactForm from './components/CreateContact';
+import SendTo from './components/SendTo';
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
               <Route path='/contacts' component={Contacts} />
               <Route path='/create-contact' component={CreateContactForm} />
             </Switch>
+            <SendTo />
             <Footer />
           </div>
         </Router>
