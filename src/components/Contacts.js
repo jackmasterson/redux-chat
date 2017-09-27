@@ -14,7 +14,6 @@ class Contacts extends Component {
        this.props.fetchContacts();
     }
     render() {
-        console.log(this.props);
         return (
             <ul>
                 {this.props.contacts.map(contact =>
