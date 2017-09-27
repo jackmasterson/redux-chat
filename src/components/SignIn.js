@@ -16,11 +16,9 @@ class SignIn extends Component {
         this.props.updatePass(val);
     }
     handleSubmit = () => {
-        console.log(this.props);
         this.props.validate(this.props.currentUser, this.props.currentPass);
     }
     render() {
-        console.log(this.props);
         if (this.props.authed && this.props.authed === true) {
             return (
                 <App />

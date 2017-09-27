@@ -12,16 +12,10 @@ export const validate = (user, pass) => {
     return (dispatch) => {
         checkDB(user, pass)
             .then(res => {
-                console.log(res);
-                console.log(res.pass);
-                console.log(pass);
                 if (pass) {
-                    console.log("made it ");
                     if (res.pass === pass) {
-                        console.log('here');
                         dispatch(verified(true))
                     } else {
-                        console.log("here though");
                         dispatch(verified(false))
                     }
                 }
