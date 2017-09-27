@@ -8,13 +8,15 @@ import Contacts from './components/Contacts';
 import CreateContactForm from './components/CreateContact';
 import SendTo from './components/SendTo';
 import SignIn from './components/SignIn';
+import { Redirect } from 'react-router'
 
 class App extends Component {
   render() {
+    console.log(this);
     let user = {};
     user.auth = false;
     console.log(this.props);
-    if (user.auth === true) {
+   // if (user.auth === true) {
       return (
         <div className="App">
           <div className="message">
@@ -23,8 +25,8 @@ class App extends Component {
           <Router>
             <div>
               <Switch>
-                <Route exact path='/' component={SignIn} />
-                <Route exact path='/keyboard' component={Alphabet} />
+                {/* <Route exact path='/sign-in' component={SignIn} /> */}
+                <Route path='/keyboard' component={Alphabet} />
                 <Route path='/contacts' component={Contacts} />
                 <Route path='/create-contact' component={CreateContactForm} />
               </Switch>
@@ -34,11 +36,16 @@ class App extends Component {
           </Router>
         </div>
       )
-    } else {
-      return (
-        <SignIn />
-      );
-    }
+  //   } else {
+  //     console.log(this);
+  //     return (
+  //         <SignIn />
+  //     );
+  //     // console.log('thisss . propss:  ', this.props);
+  //     // return (
+  //     //   <SignIn />
+  //     // );
+  //   }
 
   }
 }
