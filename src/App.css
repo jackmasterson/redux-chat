@@ -4,6 +4,7 @@ ul {
 
 .App {
   text-align: center;
+  width: 100vw;
 }
 
 .App-logo {
@@ -20,6 +21,14 @@ ul {
 
 .App-intro {
   font-size: large;
+}
+
+.Alphabet {
+  width: 100vw;
+}
+
+.Alphabet-ul {
+  width: 80vw;
 }
 
 @keyframes App-logo-spin {

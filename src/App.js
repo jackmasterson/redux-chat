@@ -12,11 +12,6 @@ import { Redirect } from 'react-router'
 
 class App extends Component {
   render() {
-    console.log(this);
-    let user = {};
-    user.auth = false;
-    console.log(this.props);
-   // if (user.auth === true) {
       return (
         <div className="App">
           <div className="message">
@@ -36,20 +31,8 @@ class App extends Component {
           </Router>
         </div>
       )
-  //   } else {
-  //     console.log(this);
-  //     return (
-  //         <SignIn />
-  //     );
-  //     // console.log('thisss . propss:  ', this.props);
-  //     // return (
-  //     //   <SignIn />
-  //     // );
-  //   }
 
   }
 }
-
-// export default App;
 
 export default App;

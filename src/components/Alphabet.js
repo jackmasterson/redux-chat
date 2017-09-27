@@ -37,8 +37,8 @@ class Alphabet extends Component {
 
     render() {
         return (
-        <div>
-            <ul>
+        <div className="Alphabet">
+            <ul className="Alphabet-ul">
                 {this.props.letters.map(letter => 
                     <Letter 
                         initiateAddition={this.props.initiateAddition}
