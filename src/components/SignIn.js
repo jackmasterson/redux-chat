@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {updateUser, updatePass, validate } from '../reducers/user';
+import {Link} from 'react-router-dom';
 
 class SignIn extends Component {
     handleUserChange = (evt) => {
@@ -29,7 +30,6 @@ class SignIn extends Component {
                 <button 
                     onClick={this.handleSubmit}>Submit</button>
             </div>
-            
         );
     }
 }

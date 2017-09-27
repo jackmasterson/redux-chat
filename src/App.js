@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import logo from './logo.svg';
 import './App.css';
-import TodoForm from './components/TodoForm';
-import TodoList from './components/TodoList';
 import Message from './components/Message';
 import Footer from './components/Footer';
 import Alphabet from './components/Alphabet';
@@ -14,7 +11,6 @@ import SignIn from './components/SignIn';
 
 class App extends Component {
   render() {
-    let view;
     let user = {};
     user.auth = false;
     console.log(this.props);

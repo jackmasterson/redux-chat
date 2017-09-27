@@ -21,7 +21,6 @@ class CreateContactForm extends Component {
         inputs[1].value = '';
     }
     render() {
-        const { currentContact, currentNumber } = this.props;
         return (
             <div>
                 <input type="text"
