@@ -12,6 +12,7 @@ export const validate = (user, pass) => {
     return (dispatch) => {
         checkDB(user, pass)
             .then(res => {
+                console.log('res: ', res);
                 if (pass) {
                     if (res.pass === pass) {
                         dispatch(verified(true))
