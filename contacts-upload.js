@@ -12,7 +12,6 @@ module.exports = (function(userName, contactName, contactNumber, callback) {
                 // callback()
                 db.close();
             } else {
-                console.log('this item exists!');
                 // callback();
                 db.close();
             }

@@ -6,21 +6,10 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import App from '../App';
 
 class SignIn extends Component {
-
-    handleUserChange = (evt) => {
-        const val = evt.target.value;
-        this.props.updateUser(val);
-    }
-    handlePassChange = (evt) => {
-        const val = evt.target.value;
-        this.props.updatePass(val);
-    }
     handleSubmit = () => {
-        this.props.validate(this.props.currentUser, this.props.currentPass);
-    }
-    responseFacebook = (data) => {
-        console.log(data);
-        this.props.validate(this.props.currentUser, this.props.currentPass);
+        let username = document.querySelector('.user').value;
+        let password = document.querySelector('.pass').value;
+        this.props.validate(username, password);
     }
     render() {
         if (this.props.authed && this.props.authed === true) {
@@ -33,10 +22,10 @@ class SignIn extends Component {
                 <div className="App">
                     <input type='text'
                         placeholder='username'
-                        onChange={this.handleUserChange} />
+                        className='user'/>
                     <input type='text'
                         placeholder='password'
-                        onChange={this.handlePassChange} />
+                        className='pass'/>
                     <div>Please sign in to continue</div>
                     <button
                         onClick={this.handleSubmit}>Submit</button>
