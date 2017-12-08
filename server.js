@@ -8,6 +8,7 @@ const app = express();
 const users = require('./users');
 const contacts = require('./contacts');
 const contactsUpload = require('./contacts-upload');
+const twilio = require('./twilio');
 
 //Serving the files on the dist folder
 app.use(express.static(DIST_DIR));
@@ -48,6 +49,7 @@ io.on('connection', (socket) => {
 
     socket.on('send-message', (res) => {
         console.log('server side for send message with res: ', res);
-    })
+        twilio(res);
+    });
 
 });
