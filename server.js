@@ -6,6 +6,8 @@ const PORT = 3000;
 const app = express();
 
 const users = require('./users');
+const contacts = require('./contacts');
+const contactsUpload = require('./contacts-upload');
 
 //Serving the files on the dist folder
 app.use(express.static(DIST_DIR));
@@ -20,35 +22,29 @@ const io = require('socket.io').listen(server);
 
 io.on('connection', (socket) => {
     const userExists = function (exists) {
-        console.log('exists: ', exists);
         if (exists) {
-            console.log('password!', exists);
             socket.emit('exists', true);
         }
     }
     socket.on('opened', (res) => {
-        console.log('server side!');
+        console.log('server side for login!');
         users(res, userExists);
     });
 
-})
-// const express = require('express');
-// const app = express();
-// const bodyParser = require('body-parser');
-// const port = process.env.REACT_APP_PORT || 3000;
-// const mongoose = require('mongoose');
+    socket.on('contacts', (res) => {
+        const callback = ((contacts) => {
+            socket.emit('contacts-retrieved', contacts);
+        })
+        contacts(res, callback);
+    })
 
-// // mongoose.Promise = global.Promise;
-// // mongoose.connect('mongodb://localhost/Tododb'); 
+    socket.on('contact-upload', (res) => {
 
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
+        console.log('server side for contacts-upload!', res);
+        const callback = function() {
+            console.log('callback for contacts-upload');
+        }
+        contactsUpload(res.user, res.number.named, res.number.number, callback);
+    })
 
-// const routes = require('./src/api/routes/routes'); //importing route
-// routes(app); //register the route
-
-
-// app.listen(port);
-
-
-// console.log('todo list RESTful API server started on: ' + port);
+});

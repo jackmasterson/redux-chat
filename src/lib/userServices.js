@@ -10,6 +10,7 @@ export const checkDB = (user, pass, callback) => {
         socket.emit('opened', { user: user, pass: pass });
         socket.on('exists', () => {
             console.log('user exists!');
+            window.username = user;
             callback(true);
         })
 

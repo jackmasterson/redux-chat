@@ -16,22 +16,28 @@ export const loadContacts = (contacts) => ({ type: CONTACT_RETRIEVED, payload: c
 export const contactSelected = (contact) => ({ type: CONTACT_SELECTED, payload: contact });
 
 export const selectContact = (contact, props) => {
+    console.log('contact: ', contact);
     return (dispatch) => {
         dispatch(contactSelected(contact))
     }
 }
 export const fetchContacts = () => {
     return (dispatch) => {
-        retrieveContacts()
-            .then(contacts => dispatch(loadContacts(contacts)))
+        const callback = function(res) {
+            console.log('made it to contacts with res!', res)
+            dispatch(loadContacts(res));
+        }
+        retrieveContacts(callback);
     }
 }
 
 export const saveContact = (contact) => {
     console.log(contact);
     return (dispatch) => {
-        createContact(contact)
-            .then(res => dispatch(addContact(res)))
+        const callback = function(res) {
+            console.log('calling back from client for contact js');
+        }
+        createContact(contact, callback)
     }
 }
 

@@ -1,9 +1,7 @@
-// Connect using MongoClient
 module.exports = (function(userName, callback) {
     const MongoClient = require('mongodb').MongoClient;
     const test = require('assert');
     const bcrypt = require('bcrypt');
-    // Connection url
     const url = 'mongodb://localhost:27017/';
 
     MongoClient.connect(url, function (err, db) {
