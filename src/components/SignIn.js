@@ -4,7 +4,6 @@ import {updateUser, updatePass, validate } from '../reducers/user';
 import { Redirect } from 'react-router';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from '../App';
-import FacebookLogin from 'react-facebook-login';
 
 class SignIn extends Component {
 
@@ -32,13 +31,6 @@ class SignIn extends Component {
             return (
                 <div>
                 <div className="App">
-                        <FacebookLogin
-                            appId="1935858823322574"
-                            autoLoad={false}
-                            fields="name,email,picture"
-                            scope="public_profile,user_friends,user_actions.books"
-                            callback={this.responseFacebook}
-                        />
                     <input type='text'
                         placeholder='username'
                         onChange={this.handleUserChange} />
@@ -46,8 +38,8 @@ class SignIn extends Component {
                         placeholder='password'
                         onChange={this.handlePassChange} />
                     <div>Please sign in to continue</div>
-                    {/* <button
-                        onClick={this.handleSubmit}>Submit</button> */}
+                    <button
+                        onClick={this.handleSubmit}>Submit</button>
                 </div>
                 </div>
             );

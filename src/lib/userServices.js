@@ -1,7 +1,8 @@
-const dbURL = process.env.REACT_APP_USER_DB;
+import {REACT_APP_USER_DB} from '../api/api';
 
 export const checkDB = (user, pass, callback) => {
-    return fetch(dbURL + user)
+    console.log('db url: ', REACT_APP_USER_DB + user);
+    return fetch(REACT_APP_USER_DB + user)
         .then(res => res.json());
 }
 
