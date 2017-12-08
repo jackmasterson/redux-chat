@@ -13,8 +13,10 @@ export const validate = (user, pass) => {
     return (dispatch) => {
         const check = function(res) {
             if (res === true) {
+                sessionStorage.setItem('authed', true);
                 dispatch(verified(true));
             } else {
+                sessionStorage.setItem('authed', false);
                 dispatch(verified(false));
             }
         }

@@ -12,7 +12,7 @@ class SignIn extends Component {
         this.props.validate(username, password);
     }
     render() {
-        if (this.props.authed && this.props.authed === true) {
+        if (sessionStorage.getItem('authed')) {
             return (
                 <App />
             )
