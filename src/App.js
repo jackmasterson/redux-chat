@@ -8,6 +8,7 @@ import Contacts from './components/Contacts';
 import CreateContactForm from './components/CreateContact';
 import SendTo from './components/SendTo';
 import SignIn from './components/SignIn';
+import Confirm from './components/Confirm';
 import { Redirect } from 'react-router'
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
                 <Route path='/keyboard' component={Alphabet} />
                 <Route path='/contacts' component={Contacts} />
                 <Route path='/create-contact' component={CreateContactForm} />
+                <Route path='/confirm' component={Confirm} />
               </Switch>
               <SendTo />
               <Footer />

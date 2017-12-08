@@ -4,7 +4,7 @@ import { fetchContacts, selectContact } from '../reducers/contacts.js';
 
 const Contact = (number, named, selectContact) => (
         <li className="inline"
-            onClick={() => number.selectContact(number.contactNumber)}>
+            onClick={() => number.selectContact(number)}>
             {number.contactName}
         </li>
 )

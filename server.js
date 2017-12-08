@@ -36,15 +36,18 @@ io.on('connection', (socket) => {
             socket.emit('contacts-retrieved', contacts);
         })
         contacts(res, callback);
-    })
+    });
 
     socket.on('contact-upload', (res) => {
-
         console.log('server side for contacts-upload!', res);
         const callback = function() {
             console.log('callback for contacts-upload');
         }
         contactsUpload(res.user, res.number.named, res.number.number, callback);
+    });
+
+    socket.on('send-message', (res) => {
+        console.log('server side for send message with res: ', res);
     })
 
 });
