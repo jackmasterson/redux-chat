@@ -2,10 +2,11 @@ module.exports = (function(userName, callback) {
     const MongoClient = require('mongodb').MongoClient;
     const test = require('assert');
     const bcrypt = require('bcrypt');
-    const url = 'mongodb://localhost:27017/';
-
+    const dotenv = require('dotenv').config();
+    // const url = 'mongodb://localhost:27017/';
+    const url = process.env.MONGO_DB_DRIVER;
     MongoClient.connect(url, function (err, db) {
-        var col = db.db('myproject').collection('userDatabase');
+        var col = db.db('test').collection('userDatabase');
         const user = userName.user;
         col.findOne({user}, function (err, item) {
             if (!item) {
