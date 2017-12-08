@@ -1,9 +1,11 @@
-var path = require("path"),
-    express = require("express");
+const path = require("path");
+const express = require("express");
 
-var DIST_DIR = path.join(__dirname, "dist"),
-    PORT = 3000,
-    app = express();
+const DIST_DIR = path.join(__dirname, "dist");
+const PORT = 3000;
+const app = express();
+
+const users = require('./users');
 
 //Serving the files on the dist folder
 app.use(express.static(DIST_DIR));
@@ -13,19 +15,22 @@ app.get("*", function (req, res) {
     res.sendFile(path.join(DIST_DIR, "index.html"));
 });
 
-var server = app.listen(PORT);
-var io = require('socket.io').listen(server);
+const server = app.listen(PORT);
+const io = require('socket.io').listen(server);
+
 io.on('connection', (socket) => {
-    socket.on('opened', () => {
-        console.log('socket: ', socket);
+    const userExists = function (exists) {
+        console.log('exists: ', exists);
+        if (exists) {
+            console.log('password!', exists);
+            socket.emit('exists', true);
+        }
+    }
+    socket.on('opened', (res) => {
         console.log('server side!');
-        // make an http request
-        // get the users
-        // emit a 'users' event
-        // send the data back
-        // receive it client side
-        // wrong
-    })
+        users(res, userExists);
+    });
+
 })
 // const express = require('express');
 // const app = express();
