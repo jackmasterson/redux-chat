@@ -31,10 +31,6 @@ const Autos = ({keyVal, val, initiateAutofill}) => (
 );
 
 class Alphabet extends Component {
-    componentDidMount() {
-        // console.log('Alphabet > this.props: ', this.props);
-    }
-
     render() {
         return (
         <div className="Alphabet">

@@ -4,6 +4,7 @@ import {updateUser, updatePass, validate } from '../reducers/user';
 import { Redirect } from 'react-router';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from '../App';
+import Alphabet from './Alphabet';
 
 class SignIn extends Component {
     handleSubmit = () => {
@@ -30,6 +31,7 @@ class SignIn extends Component {
                     <button
                         onClick={this.handleSubmit}>Submit</button>
                 </div>
+                <Alphabet />
                 </div>
             );
         }

@@ -5,16 +5,22 @@ module.exports = (function(userName, callback) {
     const url = process.env.MONGO_DB_DRIVER;
 
     MongoClient.connect(url, function (err, db) {
-        var col = db.db('test').collection(userName.user);
-        const user = userName.user;
-          col.find({}).toArray(function(err, result) {
-            if (err) {
-                console.log('err: ', err);
-                db.close();
-            } else {
-                callback(result);
-                db.close();
-            }
-        });
+        if (typeof userName.user === 'string') {
+            var col = db.db('test').collection(userName.user);
+            const user = userName.user;
+            col.find({}).toArray(function (err, result) {
+                if (err) {
+                    console.log('err: ', err);
+                    db.close();
+                } else {
+                    callback(result);
+                    db.close();
+                }
+            });
+        } else {
+            callback(false);
+            db.close();
+        }
+
     });
 })

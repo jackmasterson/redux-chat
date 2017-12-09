@@ -6,7 +6,11 @@ export const retrieveContacts = (callback) => {
     socket.on('connect', () => {
         socket.emit('contacts', { user: window.username });
         socket.on('contacts-retrieved', (res) => {
-            callback(res);
+            if (res) {
+                callback(res);
+            } else {
+                sessionStorage.removeItem('authed');
+            }
         });
     });
 
