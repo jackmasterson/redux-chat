@@ -26,6 +26,9 @@ const initState = {
                 { val: 'x', keyVal: 24 },
                 { val: 'y', keyVal: 25 },
                 { val: 'z', keyVal: 26 },
+                { val: '.', keyVal: 49 },
+                { val: '?', keyVal: 50 },
+                { val: ',', keyVal: 51 },
                 { val: ' ', keyVal: 27 }],
     specials: [{ val: 'backspace', keyVal: 28 }],
     autos: [
@@ -38,6 +41,17 @@ const initState = {
         { val: 'you', keyVal: 35 },
         { val: 'your', keyVal: 36 },
         { val: 'you\'re', keyVal: 37 },
+        { val: 'and', keyVal: 38 },
+        { val: 'could', keyVal: 39 },
+        { val: 'would', keyVal: 40 },
+        { val: 'should', keyVal: 41 },
+        { val: 'not', keyVal: 42 },
+        { val: 'probably', keyVal: 43 },
+        { val: 'basketball', keyVal: 44 },
+        { val: 'football', keyVal: 45 },
+        { val: 'sports', keyVal: 46 }, 
+        { val: 'coach', keyVal: 47 },
+        { val: 'practice', keyVal: 48 }
     ],
     currentMessage: '',
 };
