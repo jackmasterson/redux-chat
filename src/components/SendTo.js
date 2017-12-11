@@ -4,13 +4,12 @@ import {connect} from 'react-redux';
 class SendTo extends Component {
     render() {
         if (this.props.sendTo) {
-            console.log('sendTO: ', this.props.sendTo);
             return (
-                <p>Send to: {this.props.sendTo.contactName}</p>
+                <p className="send-to">Send to: {this.props.sendTo.contactName}</p>
             )
         } else {
             return (
-                <p>Please select a contact to send to</p>
+                <p className="send-to">Please select a contact to send to</p>
             )
         }
     }

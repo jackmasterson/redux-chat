@@ -5,6 +5,7 @@ import { Redirect } from 'react-router';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from '../App';
 import Alphabet from './Alphabet';
+import {Button} from 'react-bootstrap';
 
 class SignIn extends Component {
     handleSubmit = () => {
@@ -25,15 +26,16 @@ class SignIn extends Component {
                         <div className="App">
                             <input type='text'
                                 placeholder='username'
-                                className='user' />
+                                className='user signin' />
                             <input type='text'
                                 placeholder='password'
-                                className='pass' />
+                                className='pass singin' />
                             <div>Please sign in to continue</div>
-                            <button
-                                onClick={this.handleSubmit}>Submit</button>
+                            <Button
+                                bsStyle="success"
+                                className="signin"
+                                onClick={this.handleSubmit}>Submit</Button>
                         </div>
-                        <Alphabet />
                     </div>
                 </div>
             )
@@ -41,17 +43,20 @@ class SignIn extends Component {
             return (
                 <div>
                     <div className="App">
-                        <input type='text'
+                        <input 
+                            type='text'
                             placeholder='username'
-                            className='user'/>
-                        <input type='text'
+                            className='user signin'/>
+                        <input 
+                            type='text'
                             placeholder='password'
-                            className='pass'/>
+                            className='pass signin'/>
                         <div>Please sign in to continue</div>
-                        <button
-                            onClick={this.handleSubmit}>Submit</button>
+                        <Button
+                            bsStyle="success"
+                            className="signin"
+                            onClick={this.handleSubmit}>Submit</Button>
                     </div>
-                    <Alphabet />
                 </div>
             );
         }

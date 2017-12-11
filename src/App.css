@@ -53,15 +53,25 @@ ul {
 }
 
 .autofills {
-  height: 10vh;
+  height: 3vh;
 }
 
 .footer {
   padding: 15px;
   margin: 15px;
+  margin-top: 105px;
 }
 
 .link {
    padding: 15px;
   margin: 15px;
+}
+
+.send-to {
+  margin: 105px;
+}
+
+.signin {
+  margin: 135px;
+  text-align: center;
 }

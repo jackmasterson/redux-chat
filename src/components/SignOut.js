@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import {Button} from 'react-bootstrap';
 
 class SignOut extends Component {
     signOut() {
@@ -9,10 +10,12 @@ class SignOut extends Component {
     }
     render() {
         return (
-            <button
+            <Button
+                bsSize="large"
+                bsStyle="danger"
                 onClick={() => this.signOut()}>
-                <h1>Sign Out Now</h1>
-            </button>
+                Sign Out Now
+            </Button>
         );
     }
 }
