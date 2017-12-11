@@ -12,11 +12,13 @@ export const verified = (response) => ({ type: USER_STATUS, payload: response })
 export const validate = (user, pass) => {
     return (dispatch) => {
         const check = function(res) {
+            console.log('checked res is: ', res);
             if (res === true) {
                 sessionStorage.setItem('authed', true);
                 dispatch(verified(true));
             } else {
                 sessionStorage.setItem('authed', false);
+                sessionStorage.setItem('newUser', true);
                 dispatch(verified(false));
             }
         }

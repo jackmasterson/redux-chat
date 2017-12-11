@@ -13,25 +13,45 @@ class SignIn extends Component {
         this.props.validate(username, password);
     }
     render() {
-        if (sessionStorage.getItem('authed')) {
+        if (sessionStorage.getItem('authed') === 'true') {
             return (
                 <App />
+            )
+        } else if ((sessionStorage.getItem('authed') === 'false') && (sessionStorage.getItem('newUser'))) {
+            return (
+                <div>
+                    <div>It looks like you're a new user. Welcome! Please sign in again below to continue</div>
+                    <div>
+                        <div className="App">
+                            <input type='text'
+                                placeholder='username'
+                                className='user' />
+                            <input type='text'
+                                placeholder='password'
+                                className='pass' />
+                            <div>Please sign in to continue</div>
+                            <button
+                                onClick={this.handleSubmit}>Submit</button>
+                        </div>
+                        <Alphabet />
+                    </div>
+                </div>
             )
         } else {
             return (
                 <div>
-                <div className="App">
-                    <input type='text'
-                        placeholder='username'
-                        className='user'/>
-                    <input type='text'
-                        placeholder='password'
-                        className='pass'/>
-                    <div>Please sign in to continue</div>
-                    <button
-                        onClick={this.handleSubmit}>Submit</button>
-                </div>
-                <Alphabet />
+                    <div className="App">
+                        <input type='text'
+                            placeholder='username'
+                            className='user'/>
+                        <input type='text'
+                            placeholder='password'
+                            className='pass'/>
+                        <div>Please sign in to continue</div>
+                        <button
+                            onClick={this.handleSubmit}>Submit</button>
+                    </div>
+                    <Alphabet />
                 </div>
             );
         }

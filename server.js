@@ -25,6 +25,8 @@ io.on('connection', (socket) => {
     const userExists = function (exists) {
         if (exists) {
             socket.emit('exists', true);
+        } else {
+            socket.emit('exists', false);
         }
     }
     socket.on('opened', (res) => {

@@ -10,6 +10,7 @@ module.exports = (function(userName, callback) {
         const user = userName.user;
         col.findOne({user}, function (err, item) {
             if (!item) {
+                callback(false);
                 bcrypt.hash(userName.pass, 5, function( err, bcryptedPassword) {
                     let newUser = {user, bcryptedPassword}
                     col.insert(newUser);

@@ -6,10 +6,15 @@ export const checkDB = (user, pass, callback) => {
     socket.on('connect', () => {
         console.log('socket open');
         socket.emit('opened', { user: user, pass: pass });
-        socket.on('exists', () => {
+        socket.on('exists', (res) => {
             console.log('user exists!');
+            console.log('res: ', res);  
             window.username = user;
-            callback(true);
+            if (res) {
+                callback(true);
+            } else {
+                callback(false);
+            }
         })
 
     });
