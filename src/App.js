@@ -9,7 +9,8 @@ import CreateContactForm from './components/CreateContact';
 import SendTo from './components/SendTo';
 import SignIn from './components/SignIn';
 import Confirm from './components/Confirm';
-import { Redirect } from 'react-router'
+import SignOut from './components/SignOut';
+import { Redirect } from 'react-router';
 
 class App extends Component {
   render() {
@@ -26,6 +27,7 @@ class App extends Component {
                 <Route path='/contacts' component={Contacts} />
                 <Route path='/create-contact' component={CreateContactForm} />
                 <Route path='/confirm' component={Confirm} />
+                <Route path='/sign-out' component={SignOut} />
               </Switch>
               <SendTo />
               <Footer />

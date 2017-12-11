@@ -7,5 +7,6 @@ export default (props) => (
         <Link className="link" to='/contacts'>Send To</Link>
         <Link className="link" to='/create-contact'>Create Contact</Link>
         <Link className="link send" to='/confirm'>Confirm and Send Message</Link>
+        <Link className="link signout" to='/sign-out'>Sign Out</Link>
     </div>
 );

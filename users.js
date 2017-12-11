@@ -16,7 +16,6 @@ module.exports = (function(userName, callback) {
                     col.insert(newUser);
                     db.close();
                 });
-                
             } else {
                 bcrypt.compare(userName.pass, item.bcryptedPassword, function(err, res) {
                     if (res === true) {
