@@ -43,6 +43,8 @@ class SignIn extends Component {
             return (
                 <div>
                     <div className="App">
+                        <h1>Welcome to Chat-in-the-Box</h1>
+                        <div>Please sign in to continue</div>
                         <input 
                             type='text'
                             placeholder='username'
@@ -51,7 +53,6 @@ class SignIn extends Component {
                             type='text'
                             placeholder='password'
                             className='pass signin'/>
-                        <div>Please sign in to continue</div>
                         <Button
                             bsStyle="success"
                             className="signin"
