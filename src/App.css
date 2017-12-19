@@ -43,9 +43,19 @@ ul {
 .inline {
   display: inline-block;
   padding: 15px;
-  margin: 45px;
+  margin: 25px;
   cursor: pointer;
   border: 1px solid black;
+}
+
+li.k-letter.inline {
+  margin-right:80vw;
+}
+li.m-letter.inline {
+    margin-right: 80vw;
+}
+li.o-letter.inline {
+    margin-right: 80vw;
 }
 
 .message {

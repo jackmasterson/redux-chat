@@ -10,7 +10,7 @@ import {
 } from '../reducers/alphabet.js';
 
 const Letter = ({keyVal, val, initiateAddition}) => (
-    <li className="inline" 
+    <li className={val + "-letter inline"}  
         onClick={() => initiateAddition(val)}>
         {val}
     </li>
