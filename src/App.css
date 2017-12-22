@@ -48,15 +48,15 @@ ul {
   border: 1px solid black;
 }
 
-li.k-letter.inline {
-  margin-right:80vw;
+/* li.k-letter.inline {
+  margin-right:40vw;
 }
 li.m-letter.inline {
-    margin-right: 80vw;
+    margin-right: 40vw;
 }
 li.o-letter.inline {
-    margin-right: 80vw;
-}
+    margin-right: 40vw;
+} */
 
 .message {
   height: 5vh;
@@ -79,6 +79,7 @@ li.o-letter.inline {
 
 .send-to {
   margin: 105px;
+  margin-top: 60px;
 }
 
 .signin {
