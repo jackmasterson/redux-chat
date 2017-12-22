@@ -69,7 +69,6 @@ li.o-letter.inline {
 .footer {
   padding: 15px;
   margin: 15px;
-  margin-top: 105px;
 }
 
 .link {
@@ -80,6 +79,7 @@ li.o-letter.inline {
 .send-to {
   margin: 105px;
   margin-top: 60px;
+  margin-bottom: 50px;
 }
 
 .signin {
